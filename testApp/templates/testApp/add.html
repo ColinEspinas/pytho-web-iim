@@ -1,0 +1,11 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'testApp/style.css' %}">
+
+<h1>Add a question</h1>
+
+<form method="post" action="add">
+  {% csrf_token %}
+  <input type="text" name="text">
+  <button type="submit">Add</button>
+</form>

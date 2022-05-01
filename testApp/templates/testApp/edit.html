@@ -1,0 +1,15 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'testApp/style.css' %}">
+
+<h1>Edit your question</h1>
+
+{% if question %}
+  <p>{{ question.text }}</p>
+{% endif %}
+
+<form method="post" action="/edit/{{ question.id }}">
+  {% csrf_token %}
+  <input type="text" name="text">
+  <button type="submit">Edit</button>
+</form>
